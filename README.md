@@ -3,7 +3,7 @@
 ## users テーブル
 
 | Column              | Type   | Options     |
-| ---------           | ------ | ----------- |
+| ------------------- | ------ | ----------- |
 | email               | string | null: false |
 | encrypted_password  | string | null: false |
 | nickname            | string | null: false |
@@ -31,7 +31,7 @@
 | area_id     | integer    | null: false                    |
 | days_id     | integer    | null: false                    |
 | price       | integer    | null: false                    |
-| user_id     | references | null: false, foreign_key: true |
+| user        | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -41,13 +41,10 @@
 
 ## orders テーブル
 
-| Column          | Type       | Options                        |
-| --------------- | ---------- | ------------------------------ |
-| card_no         | integer    | null: false                    |
-| expriation_date | integer    | null: false                    |
-| cvc             | integer    | null: false                    |
-| item_id         | references | null: false, foreign_key: true |
-| user_id         | references | null: false, foreign_key: true |
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| item         | references | null: false, foreign_key: true |
+| user         | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -64,9 +61,9 @@
 | prefecture      | integer    | null: false                    |
 | cities          | integer    | null: false                    |
 | address         | integer    | null: false                    |
-| building        | integer    | null: false                    |
+| building        | integer    |                                |
 | tel             | integer    | null: false                    |
-| orders_id       | references | null: false, foreign_key: true |
+| orders          | references | null: false, foreign_key: true |
 
 
 ### Association
