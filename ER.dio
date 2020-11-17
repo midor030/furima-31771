@@ -1,6 +1,6 @@
-<mxfile host="65bd71144e" modified="2020-11-17T07:39:53.812Z" agent="5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.0 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" etag="HIKE2Pmsf8KRcCzbY730" version="13.6.5">
+<mxfile host="65bd71144e" modified="2020-11-17T07:50:51.858Z" agent="5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.0 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" etag="f3Qjel17PC8dDXTp2GMW" version="13.6.5">
     <diagram id="irtB5RlOvdlojnIPy1wM" name="ページ1">
-        <mxGraphModel dx="393" dy="589" grid="1" gridSize="10" guides="0" tooltips="1" connect="0" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="968" dy="680" grid="1" gridSize="10" guides="0" tooltips="1" connect="0" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -101,7 +101,7 @@
                 <mxCell id="94" value="postcode" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="91">
                     <mxGeometry y="30" width="230" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="95" value="prefecture" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="91">
+                <mxCell id="95" value="prefecuture_id" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="91">
                     <mxGeometry y="60" width="230" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="98" value="cities" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="91">

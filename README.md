@@ -58,7 +58,7 @@
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
 | postcode        | integer    | null: false                    |
-| prefecture      | integer    | null: false                    |
+| prefecture_id   | integer    | null: false                    |
 | cities          | integer    | null: false                    |
 | address         | integer    | null: false                    |
 | building        | integer    |                                |
