@@ -9,40 +9,6 @@ describe User do
       it 'nicknameとemail、passwordとpassword_confirmationと姓（漢字）名（漢字）、姓（カナ）名（カナ）、生年月日が存在すれば登録できる' do
         expect(@user).to be_valid
       end
-      it 'mailがdbにないものであるとき登録できる' do
-        @user.save
-        another_user = FactoryBot.build(:user)
-        another_user.email != @user.email
-      end
-      it 'mailに@が含まれているとき登録できる' do
-        @user.email.include?('@')
-        @user.valid?
-        expect(@user).to be_valid
-      end
-      it 'passwordが6文字以上あれば登録できる' do
-        @user.password = 'aaa111'
-        @user.password_confirmation = 'aaa111'
-        expect(@user).to be_valid
-      end
-      it 'passwordが半角英数字混合であれば登録できる' do
-        @user.password = 'a1a1a1'
-        @user.password_confirmation = 'a1a1a1'
-        expect(@user).to be_valid
-      end
-      it 'passwordとpassword_confirmationが同じであれば登録できる' do
-        @user.password == @user.password_confirmation
-        expect(@user).to be_valid
-      end
-      it '本名は全角漢字ひらがなカタカナ入力の時登録できる' do
-        @user.familyname_kanji = '安倍'
-        @user.firstname_kanji = '晋三'
-        expect(@user).to be_valid
-      end
-      it 'フリガナは全角カタカナであれば登録できる' do
-        @user.familyname_kana = 'アベ'
-        @user.firstname_kana = 'シンゾウ'
-        expect(@user).to be_valid
-      end
     end
 
     context '新規登録がうまくいかないとき' do
@@ -81,6 +47,11 @@ describe User do
       end
       it 'passwordが半角英数字混合でなければ登録できない' do
         @user.password = 'aaaaaaa'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+      end
+      it 'passwordが半角英数字混合でなければ登録できない' do
+        @user.password = '1111111'
         @user.valid?
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
