@@ -29,7 +29,7 @@
 | state_id    | integer    | null: false                    |
 | load_id     | integer    | null: false                    |
 | area_id     | integer    | null: false                    |
-| days_id     | integer    | null: false                    |
+| day_id     | integer    | null: false                    |
 | price       | integer    | null: false                    |
 | user        | references | null: false, foreign_key: true |
 
