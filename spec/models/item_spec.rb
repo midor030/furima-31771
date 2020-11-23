@@ -31,25 +31,50 @@ describe Item do
         @item.valid?
         expect(@item.errors.full_messages).to include("Category can't be blank")
       end
+      it 'category_idが１だと登録できない' do
+        @item.category_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Category must be other than 1')
+      end
       it 'state_idが空だと登録できない' do
         @item.state_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("State can't be blank")
+      end
+      it 'state_idが１だと登録できない' do
+        @item.state_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include('State must be other than 1')
       end
       it 'load_idが空だと登録できない' do
         @item.load_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Load can't be blank")
       end
+      it 'load_idが１だと登録できない' do
+        @item.load_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Load must be other than 1')
+      end
       it 'area_idが空だと登録できない' do
         @item.area_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Area can't be blank")
       end
+      it 'area_idが１だと登録できない' do
+        @item.area_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Area must be other than 1')
+      end
       it 'day_idが空だと登録できない' do
         @item.day_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Day can't be blank")
+      end
+      it 'day_idが１だと登録できない' do
+        @item.day_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Day must be other than 1')
       end
       it 'priceが空だと登録できない' do
         @item.price = ''
