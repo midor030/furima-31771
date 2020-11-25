@@ -23,9 +23,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    unless current_user.id == @item.user_id
-      redirect_to item_path
-    end
+    redirect_to item_path unless current_user.id == @item.user_id
   end
 
   def update
@@ -36,14 +34,18 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item.destroy
+    redirect_to items_path
+  end
+
   private
 
   def item_params
     params.require(:item).permit(:item, :explain, :image, :category_id, :state_id, :load_id, :area_id, :day_id, :price).merge(user_id: current_user.id)
   end
 
-  def  set_item
+  def set_item
     @item = Item.find(params[:id])
   end
-
 end
