@@ -7,6 +7,7 @@ describe Item do
   describe '商品出品登録' do
     context '商品出品登録がうまくいくとき' do
       it 'imageとitemとexplainとcategory_idとstate_idとarea_idとday_idとpriceがあると登録できる' do
+        binding.pry
         expect(@item).to be_valid
       end
     end
