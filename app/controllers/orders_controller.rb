@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
     @item = Item.find(params[:item_id])
     @user_item = UserItem.new(order_params)
     if @user_item.valid?
+      binding.pry
       pay_item
       @user_item.save
       return redirect_to items_path
@@ -18,13 +19,13 @@ class OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:user_item).permit(:postcode, :prefecture, :cities, :address, :building, :tel).merge(token: params[:card_token],price: @item.price, user_id: current_user.id)
+    params.require(:user_item).permit(:postcode, :prefecture, :cities, :address, :building, :tel).merge(token: params[:card_token],item_id: params[:item_id], user_id: current_user.id)
   end
 
   def pay_item
     Payjp.api_key = "sk_test_e82df4b9f3f5350e4e8e6cf9"
     Payjp::Charge.create(
-      amount: order_params[:price],
+      amount: @item.price,
       card: order_params[:token],
       currency: 'jpy'
     )
