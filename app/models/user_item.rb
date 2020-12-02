@@ -1,6 +1,6 @@
 class UserItem
   include ActiveModel::Model
-  attr_accessor :item, :user, :postcode, :prefecture, :cities, :address, :building, :tel
+  attr_accessor :item_id, :user_id, :postcode, :prefecture, :cities, :address, :building, :tel, :token, :price
 
   with_options presence: true do
     validates :postcode, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
@@ -13,8 +13,7 @@ class UserItem
 
 
   def save
-    user = currenr_user
-    Address.create(postcode: postcode, prefecture: prefecture, cities: cities, address: address, building: building, tel: tel,user: user.id)
-    Oder.create(item_id: item.id, user_id: user.id)
+    order = Order.create(item_id: item_id, user_id: user_id)
+    Address.create(postcode: postcode, prefecuture_id: prefecture, cities: cities, address: address, building: building, tel: tel, order_id: order.id)
   end
 end
