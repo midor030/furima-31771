@@ -21,13 +21,13 @@ describe Order do
       it '市区町村が入力されていない時登録できない' do
       end
       it '番地が入力されていない時登録できない' do
-      end  
+      end
       it '電話番号が入力されていない時登録できない' do
       end
       it '電話番号にハイフンがあると登録できない' do
       end
       it '電話番号が11桁以上あると登録できない' do
-      end 
+      end
     end
   end
 end
