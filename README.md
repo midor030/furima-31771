@@ -29,7 +29,7 @@
 | state_id    | integer    | null: false                    |
 | load_id     | integer    | null: false                    |
 | area_id     | integer    | null: false                    |
-| day_id     | integer    | null: false                    |
+| day_id      | integer    | null: false                    |
 | price       | integer    | null: false                    |
 | user        | references | null: false, foreign_key: true |
 
@@ -57,12 +57,12 @@
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
-| postcode        | integer    | null: false                    |
+| postcode        | string     | null: false                    |
 | prefecture_id   | integer    | null: false                    |
-| cities          | integer    | null: false                    |
-| address         | integer    | null: false                    |
-| building        | integer    |                                |
-| tel             | integer    | null: false                    |
+| cities          | string     | null: false                    |
+| address         | string     | null: false                    |
+| building        | string     |                                |
+| tel             | string     | null: false                    |
 | orders          | references | null: false, foreign_key: true |
 
 
