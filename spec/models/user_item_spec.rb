@@ -34,7 +34,7 @@ RSpec.describe UserItem, type: :model do
         expect(@user_item.errors.full_messages).to include('Postcode is invalid. Include hyphen(-)')
       end
       it '都道府県が選択されていない時登録できない' do
-        @user_item.prefecture = '0'
+        @user_item.prefecture = 0
         @user_item.valid?
         expect(@user_item.errors.full_messages).to include("Prefecture can't be blank")
       end
@@ -56,7 +56,12 @@ RSpec.describe UserItem, type: :model do
       it '電話番号にハイフンがあると登録できない' do
         @user_item.tel = '090-3333-2222'
         @user_item.valid?
-        expect(@user_item.errors.full_messages).to include('Tel is not a number')
+        expect(@user_item.errors.full_messages).to include('Tel is invalid')
+      end
+      it '電話番号が12桁以上では登録できない' do
+        @user_item.tel = '090999988887777'
+        @user_item.valid?
+        expect(@user_item.errors.full_messages).to include('Tel is invalid')
       end
     end
   end

@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item
 
-  
   def index
     if (current_user.id == @item.user.id) || !@item.order.nil?
       redirect_to root_path
